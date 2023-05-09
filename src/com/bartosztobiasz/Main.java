@@ -1,17 +1,22 @@
 package com.bartosztobiasz;
 
-import java.text.NumberFormat;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String result;
+        Scanner scanner = new Scanner(System.in); // System.in -> read from a terminal
 
-        NumberFormat currency = NumberFormat.getCurrencyInstance(); // factory method
-        result = currency.format(123456.789);
-        System.out.println(result);
+        System.out.print("Age: ");
+        byte age = scanner.nextByte();
+        System.out.println("You are " + age); // implicit casting
 
-        // Refactor: Inline Variable
-        result = NumberFormat.getPercentInstance().format(0.1); // method chaining
-        System.out.println(result);
+        System.out.print("Name: ");
+        String name = scanner.next(); // reads one token (word)
+        System.out.println("You are " + name);
+
+        System.out.print("Full name: ");
+        scanner.nextLine(); // !
+        String fullName = scanner.nextLine().trim(); // method chaining
+        System.out.println("You are " + fullName);
     }
 }
