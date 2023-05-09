@@ -1,14 +1,40 @@
 package com.bartosztobiasz;
 
-import java.awt.*;
-
 public class Main {
     public static void main(String[] args) {
-        Point point1 = new Point(1, 1);
-        Point point2 = point1; // point2 stores a reference to the object
+        // "Hello World" is a string literal/value
 
-        // Changes made in one variable will be visible in the other variable.
-        point1.x = 2;
-        System.out.println(point2);
+        // java.lang package is automatically imported
+
+        /*
+        Unless an explicit copy of original is needed,
+        use of this constructor is unnecessary since Strings are immutable.
+         */
+//        String message = new String("Hello World");
+
+//        String message = "Hello World"; // shorthand to initialize a string variable
+//        System.out.println(message);
+
+        // join a string with another one -> concatenate two strings
+        String message = "Hello World" + "!!";
+
+        System.out.println(message.endsWith("!!"));
+        System.out.println(message.startsWith("!!"));
+
+        System.out.println(message.length());
+
+        System.out.println(message.indexOf("H"));
+        System.out.println(message.indexOf("sky")); // -1
+
+        System.out.println(message.replace("!", "*")); // ang. asterisk -> pol. gwiazdka
+        System.out.println(message); // String.replace() doesn't modify the original string
+        // Strings are immutable (pol. niezmienne)
+
+        System.out.println(message.toLowerCase());
+        System.out.println(message.toUpperCase());
+
+        message = "  Hello World" + "!!  ";
+        System.out.println(message.trim()); // all leading and trailing spaces are removed
+        System.out.println(message);
     }
 }
