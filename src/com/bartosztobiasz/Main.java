@@ -1,36 +1,21 @@
 package com.bartosztobiasz;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // for loop -> when you know how many times you want to execute statement/-s
 
-        System.out.print("Number: ");
-        int number = scanner.nextInt();
+        // i, j, k, ...
+        // for (loop/counter variable; loop condition -> boolean expression; i++) { code block }
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Hello World " + i);
+        }
 
-        // % -> modulus operator returns the remainder (pol. reszta) of the division
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Hello World " + i);
+        }
 
-        // the most specific condition on the top
-        if (number % 5 == 0 && number % 3 == 0)
-            System.out.println("FizzBuzz");
-        else if (number % 5 == 0)
-            System.out.println("Fizz");
-        // the most generic condition on the bottom
-        else if (number % 3 == 0)
-            System.out.println("Buzz");
-        else
-            System.out.println(number);
-
-        // avoid nested structure in your code
-        if (number % 5 == 0) {
-            if (number % 3 == 0)
-                System.out.println("FizzBuzz");
-            else
-                System.out.println("Fizz");
-        } else if (number % 3 == 0)
-            System.out.println("Buzz");
-        else
-            System.out.println(number);
+        for (int i = 5; i > 0; i--) {
+            System.out.println("Hello World " + i);
+        }
     }
 }
