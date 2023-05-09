@@ -9,9 +9,9 @@ public class Main {
         // implicit (pol. niejawny) casting, automatic conversion/casting -> NO data loss
         // byte > short > int > long > float > double
 
-        short x = 1;
-        // short > int
-        int y = x + 2; // short + int; short (2 bytes) + int (4 bytes)
+        double x = 1.1;
+        // int > double
+        double y = x + 2; // 1.1 + 2.0; double (more precise) + int (less precise)
         System.out.println(y);
     }
 }
