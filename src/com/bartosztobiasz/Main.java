@@ -2,8 +2,12 @@ package com.bartosztobiasz;
 
 public class Main {
     public static void main(String[] args) {
-        // An expression is a piece of code that produces a value
-        double result = (double) 10 / (double) 3; // casting two operands
-        System.out.println(result);
+        // postfix -> increment operator after variable
+        int x = 1;
+        // 1. copy x value to y
+        // 2. increment x
+        int y = x++;
+        System.out.println(x); // x = 2
+        System.out.println(y); // y = 1
     }
 }
