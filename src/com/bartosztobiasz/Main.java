@@ -1,22 +1,31 @@
 package com.bartosztobiasz;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
+// ang. mortgage /morgydż/ -> pol. hipoteka, obciążyć hipotekę
+// https://www.wikihow.com/Calculate-Mortgage-Payments
+// Math.pow()
+// principal -> amount of loan (pol. pożyczka)
+// ang. interest rate -> pol. stopa procentowa
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // System.in -> read from a terminal
+        final byte MONTHS_IN_YEAR = 12;
 
-        System.out.print("Age: ");
-        byte age = scanner.nextByte();
-        System.out.println("You are " + age); // implicit casting
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Name: ");
-        String name = scanner.next(); // reads one token (word)
-        System.out.println("You are " + name);
+        System.out.print("Principal: ");
+        int principal = scanner.nextInt();
 
-        System.out.print("Full name: ");
-        scanner.nextLine(); // !
-        String fullName = scanner.nextLine().trim(); // method chaining
-        System.out.println("You are " + fullName);
+        System.out.print("Annual Interest Rate [%]: ");
+        float monthlyInterestRate = scanner.nextFloat() / MONTHS_IN_YEAR / 100;
+
+        System.out.print("Period (Years): ");
+        short period = (short) (scanner.nextByte() * MONTHS_IN_YEAR);
+
+        double mortgage = principal *
+                monthlyInterestRate * Math.pow(1 + monthlyInterestRate, period) /
+                (Math.pow(1 + monthlyInterestRate, period) - 1);
+        System.out.print("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
     }
 }
