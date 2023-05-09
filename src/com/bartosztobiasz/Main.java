@@ -1,26 +1,28 @@
 package com.bartosztobiasz;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        /*
-        special characters:
-        " -> \"
-        \ -> \\
-        \n
-        \t
-         */
-        String message;
+        // Arrays are reference types
+        // Arrays have a fixed size/length
 
-        message = "Hello \"Mosh\"";
-        System.out.println(message);
+        // older syntax
+//        int[] numbers = new int[5];
+//        numbers[0] = 1;
+//        numbers[1] = 2;
+//        numbers[10] = 3; // Exception here
 
-        message = "c:\\Windows\\...";
-        System.out.println(message);
+        // newer syntax
+        int[] numbers = {2, 3, 5, 1, 4};
 
-        message = "c:\nWindows\\...";
-        System.out.println(message);
+        System.out.println(numbers);
 
-        message = "c:\tWindows\\...";
-        System.out.println(message);
+        System.out.println(numbers.length);
+
+        Arrays.sort(numbers);
+
+        // Arrays.toString() is implemented multiple times => the method is overloaded (method overloading)
+        System.out.println(Arrays.toString(numbers));
     }
 }
