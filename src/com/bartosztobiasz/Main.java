@@ -1,19 +1,14 @@
 package com.bartosztobiasz;
 
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
-//        int age = 30;
-        byte age = 30;
+        Date now = new Date();
+        // new -> reserved keyword; allocates memory
 
-//        int viewsCount = 123_456_789;
-        long viewsCount = 3_123_456_789L; // l/L
+//        now.getTime() // member
 
-//        double price = 10.99;
-        float price = 10.99f; // f/F
-
-        // single quote = single character
-        char letter = 'A';
-
-        boolean isEligible = false; // pol. spełniający wymagania/warunki
+        System.out.println(now); // print value of the date object
     }
 }
