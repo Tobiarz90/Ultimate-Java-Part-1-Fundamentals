@@ -9,14 +9,28 @@ public class Main {
         System.out.print("Number: ");
         int number = scanner.nextInt();
 
-        if (number % 5 == 0 && number % 3 == 0) {
+        // % -> modulus operator returns the remainder (pol. reszta) of the division
+
+        // the most specific condition on the top
+        if (number % 5 == 0 && number % 3 == 0)
             System.out.println("FizzBuzz");
-        } else if (number % 5 == 0) {
+        else if (number % 5 == 0)
             System.out.println("Fizz");
-        } else if (number % 3 == 0) {
+        // the most generic condition on the bottom
+        else if (number % 3 == 0)
             System.out.println("Buzz");
-        } else {
+        else
             System.out.println(number);
-        }
+
+        // avoid nested structure in your code
+        if (number % 5 == 0) {
+            if (number % 3 == 0)
+                System.out.println("FizzBuzz");
+            else
+                System.out.println("Fizz");
+        } else if (number % 3 == 0)
+            System.out.println("Buzz");
+        else
+            System.out.println(number);
     }
 }
