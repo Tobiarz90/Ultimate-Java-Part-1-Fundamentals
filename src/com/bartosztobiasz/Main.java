@@ -4,16 +4,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // do { code block } while (loop condition -> boolean expression);
-        // do..while loop is executed AT LEAST ONCE
-
         Scanner scanner = new Scanner(System.in);
 
         String input;
-        do {
+        while (true) {
             System.out.print("Input: ");
             input = scanner.next().toLowerCase();
+
+//            if (!input.equals("quit"))
+//                System.out.println(input);
+
+            if (input.equals("pass"))
+                continue; // moves control to the beginning of the loop
+
+            if (input.equals("quit"))
+                break; // terminates the loop
+
             System.out.println(input);
-        } while (!input.equals("quit"));
+        }
     }
 }
