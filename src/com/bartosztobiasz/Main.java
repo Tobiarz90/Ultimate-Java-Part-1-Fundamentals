@@ -1,10 +1,14 @@
 package com.bartosztobiasz;
 
+import java.awt.*;
+
 public class Main {
     public static void main(String[] args) {
-        byte x = 1;
-        byte y = x; // 1
-        x = 2; // y is not affected => x and y are completely independent of each other
-        System.out.println(y);
+        Point point1 = new Point(1, 1);
+        Point point2 = point1; // point2 stores a reference to the object
+
+        // Changes made in one variable will be visible in the other variable.
+        point1.x = 2;
+        System.out.println(point2);
     }
 }
