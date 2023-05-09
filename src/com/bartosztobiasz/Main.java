@@ -2,19 +2,16 @@ package com.bartosztobiasz;
 
 public class Main {
     public static void main(String[] args) {
-        // using augmented/compound assignment operator
-        int x = 1;
+        /*
+         Aby operacja matematyczna została wykonana,
+         kompilator najpierw konwertuje elementy wyrażenia do wspólnego typu danych
+         */
+        // implicit (pol. niejawny) casting, automatic conversion/casting -> NO data loss
+        // byte > short > int > long > float > double
 
-        x += 2; // x = x + 2;
-        System.out.println(x);
-
-        x -= 2; // x = x - 2;
-        System.out.println(x);
-
-        x *= 2; // x = x * 2;
-        System.out.println(x);
-
-        x /= 2; // x = x / 2;
-        System.out.println(x);
+        short x = 1;
+        // short > int
+        int y = x + 2; // short + int; short (2 bytes) + int (4 bytes)
+        System.out.println(y);
     }
 }
