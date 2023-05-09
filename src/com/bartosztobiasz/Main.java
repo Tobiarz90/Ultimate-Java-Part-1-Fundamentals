@@ -6,12 +6,11 @@ public class Main {
          Aby operacja matematyczna została wykonana,
          kompilator najpierw konwertuje elementy wyrażenia do wspólnego typu danych
          */
-        // implicit (pol. niejawny) casting, automatic conversion/casting -> NO data loss
-        // byte > short > int > long > float > double
+        // explicit (pol. jawny) casting, manual conversion/casting -> data loss
 
         double x = 1.1;
-        // int > double
-        double y = x + 2; // 1.1 + 2.0; double (more precise) + int (less precise)
+        // (int) x => data loss here
+        int y = (int) x + 2; // 1 + 2
         System.out.println(y);
     }
 }
