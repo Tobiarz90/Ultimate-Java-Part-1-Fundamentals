@@ -1,14 +1,10 @@
 package com.bartosztobiasz;
 
-import java.util.Date;
-
 public class Main {
     public static void main(String[] args) {
-        Date now = new Date();
-        // new -> reserved keyword; allocates memory
-
-//        now.getTime() // member
-
-        System.out.println(now); // print value of the date object
+        byte x = 1;
+        byte y = x; // 1
+        x = 2; // y is not affected => x and y are completely independent of each other
+        System.out.println(y);
     }
 }
