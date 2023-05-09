@@ -2,6 +2,9 @@ package com.bartosztobiasz;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World"); // Class.field.method();
+//        int age = 30, temperature = 20;
+        int age = 30; // type name/label/identifier assignment_operator initial_value
+        age = 35;
+        System.out.println(age);
     }
 }
