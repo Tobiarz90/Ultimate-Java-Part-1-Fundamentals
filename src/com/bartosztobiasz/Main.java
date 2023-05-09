@@ -10,7 +10,9 @@ import java.util.Scanner;
 // ang. interest rate -> pol. stopa procentowa
 public class Main {
     public static void main(String[] args) {
+        // avoid magic numbers in your code, always use constants (final variables) to describe them
         final byte MONTHS_IN_YEAR = 12;
+        final byte PERCENT = 100;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -18,14 +20,19 @@ public class Main {
         int principal = scanner.nextInt();
 
         System.out.print("Annual Interest Rate [%]: ");
-        float monthlyInterestRate = scanner.nextFloat() / MONTHS_IN_YEAR / 100;
+        // do not use magic names for your variables, always use meaningful and descriptive names
+        float annualInterestRate = scanner.nextFloat();
+        float monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR / PERCENT;
 
         System.out.print("Period (Years): ");
-        short period = (short) (scanner.nextByte() * MONTHS_IN_YEAR);
+        byte years = scanner.nextByte();
+        short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
 
-        double mortgage = principal *
-                monthlyInterestRate * Math.pow(1 + monthlyInterestRate, period) /
-                (Math.pow(1 + monthlyInterestRate, period) - 1);
-        System.out.print("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
+        double mortgage = principal
+                * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
+                / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+
+        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.print("Mortgage: " + mortgageFormatted);
     }
 }
