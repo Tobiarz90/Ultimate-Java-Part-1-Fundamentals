@@ -4,29 +4,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // while loop => when you DON'T know how many times you want to execute statement/-s
-
-        int i = 1;
-        // while (loop condition -> boolean expression) { code block }
-        while (i <= 5) {
-            System.out.println("Hello World " + i);
-            i++;
-        }
-
-        int j = 5;
-        while (j > 0) {
-            System.out.println("Hello World " + j);
-            j--;
-        }
+        // do { code block } while (loop condition -> boolean expression);
+        // do..while loop is executed AT LEAST ONCE
 
         Scanner scanner = new Scanner(System.in);
 
-        String input = "";
-        // comparison operators compare the address of a string object, not its value
-        while (!input.equals("quit")) {
+        String input;
+        do {
             System.out.print("Input: ");
             input = scanner.next().toLowerCase();
             System.out.println(input);
-        }
+        } while (!input.equals("quit"));
     }
 }
