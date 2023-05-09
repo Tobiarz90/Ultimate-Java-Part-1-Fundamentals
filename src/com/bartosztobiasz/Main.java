@@ -2,27 +2,36 @@ package com.bartosztobiasz;
 
 public class Main {
     public static void main(String[] args) {
-        int income = 120_000;
+        String role = "admin";
 
-        // #1
-//        String className;
-//        if (income > 100_000) {
-//            className = "First";
-//        } else {
-//            className = "Economy";
-//        }
-//        System.out.println(className);
+        if (role == "admin") {
+            System.out.println("You're an admin");
+        } else if (role == "moderator") {
+            System.out.println("You're a moderator");
+        } else {
+            System.out.println("You're a guest");
+        }
 
-        // #2
-//        String className = "Economy";
-//        if (income > 100_000) {
-//            className = "First";
-//        }
-//        System.out.println(className);
 
-        // #3
-        // ternary operator; condition ? value1 : value2
-        String className = income > 100_000 ? "First" : "Economy";
-        System.out.println(className);
+        /*
+        from: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html
+
+        "A switch works with the byte, short, char, and int primitive data types.
+        It also works with enumerated types, the String class,
+        and a few special classes that wrap certain primitive types:
+        Character, Byte, Short, and Integer."
+         */
+        switch (role) {
+            case "admin":
+                System.out.println("You're an admin");
+                break;
+
+            case "moderator":
+                System.out.println("You're a moderator");
+                break;
+
+            default:
+                System.out.println("You're a guest");
+        }
     }
 }
