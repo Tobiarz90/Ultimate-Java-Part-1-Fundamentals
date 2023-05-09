@@ -25,26 +25,28 @@ public class Main {
             System.out.println("Enter number between 1,000 and 1,000,000");
         }
 
-        float annualInterestRate;
+        float monthlyInterestRate;
         while (true) {
             System.out.print("Annual Interest Rate [%]: ");
             // do not use magic names for your variables, always use meaningful and descriptive names
-            annualInterestRate = scanner.nextFloat();
-            if (annualInterestRate > 0 && annualInterestRate <= 30)
+            float annualInterestRate = scanner.nextFloat();
+            if (annualInterestRate > 0 && annualInterestRate <= 30) {
+                monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR / PERCENT;
                 break;
+            }
             System.out.println("Enter number between 1 and 30");
         }
-        float monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR / PERCENT;
 
-        byte years;
+        short numberOfPayments;
         while (true) {
             System.out.print("Period (Years): ");
-            years = scanner.nextByte();
-            if (years > 0 && years <= 30)
+            byte years = scanner.nextByte();
+            if (years > 0 && years <= 30) {
+                numberOfPayments = (short) (years * MONTHS_IN_YEAR);
                 break;
+            }
             System.out.println("Enter number between 1 and 30");
         }
-        short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
 
         double mortgage = principal
                 * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
