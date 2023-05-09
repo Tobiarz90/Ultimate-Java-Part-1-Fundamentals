@@ -5,23 +5,24 @@ public class Main {
         int income = 120_000;
 
         // #1
-//        boolean hasHighIncome;
+//        String className;
 //        if (income > 100_000) {
-//            hasHighIncome = true;
+//            className = "First";
 //        } else {
-//            hasHighIncome = false;
+//            className = "Economy";
 //        }
-//        System.out.println(hasHighIncome);
+//        System.out.println(className);
 
         // #2
-//        boolean hasHighIncome = false;
+//        String className = "Economy";
 //        if (income > 100_000) {
-//            hasHighIncome = true;
+//            className = "First";
 //        }
-//        System.out.println(hasHighIncome);
+//        System.out.println(className);
 
         // #3
-        boolean hasHighIncome = (income > 100_000);
-        System.out.println(hasHighIncome);
+        // ternary operator; condition ? value1 : value2
+        String className = income > 100_000 ? "First" : "Economy";
+        System.out.println(className);
     }
 }
