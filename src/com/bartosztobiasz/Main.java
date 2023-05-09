@@ -1,37 +1,22 @@
 package com.bartosztobiasz;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String role = "admin";
+        Scanner scanner = new Scanner(System.in);
 
-        if (role == "admin") {
-            System.out.println("You're an admin");
-        } else if (role == "moderator") {
-            System.out.println("You're a moderator");
+        System.out.print("Number: ");
+        int number = scanner.nextInt();
+
+        if (number % 5 == 0 && number % 3 == 0) {
+            System.out.println("FizzBuzz");
+        } else if (number % 5 == 0) {
+            System.out.println("Fizz");
+        } else if (number % 3 == 0) {
+            System.out.println("Buzz");
         } else {
-            System.out.println("You're a guest");
-        }
-
-
-        /*
-        from: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html
-
-        "A switch works with the byte, short, char, and int primitive data types.
-        It also works with enumerated types, the String class,
-        and a few special classes that wrap certain primitive types:
-        Character, Byte, Short, and Integer."
-         */
-        switch (role) {
-            case "admin":
-                System.out.println("You're an admin");
-                break;
-
-            case "moderator":
-                System.out.println("You're a moderator");
-                break;
-
-            default:
-                System.out.println("You're a guest");
+            System.out.println(number);
         }
     }
 }
