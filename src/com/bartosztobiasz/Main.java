@@ -1,26 +1,23 @@
 package com.bartosztobiasz;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // for each -> iterates over an array or a collections
 
-        String input;
-        while (true) {
-            System.out.print("Input: ");
-            input = scanner.next().toLowerCase();
+        String[] fruits = {"Apple", "Mango", "Orange"};
 
-//            if (!input.equals("quit"))
-//                System.out.println(input);
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.println(fruits[i]);
+        }
 
-            if (input.equals("pass"))
-                continue; // moves control to the beginning of the loop
+        // for (loop variable : array or collection) { code block }
+        // for each loop is FORWARD only
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
 
-            if (input.equals("quit"))
-                break; // terminates the loop
-
-            System.out.println(input);
+        for (int i = fruits.length - 1; i >= 0; i--) {
+            System.out.println(fruits[i]);
         }
     }
 }
