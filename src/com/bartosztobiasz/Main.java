@@ -2,12 +2,23 @@ package com.bartosztobiasz;
 
 public class Main {
     public static void main(String[] args) {
-        String x = "1";
+        int result;
 
-        // every primitive type has a reference type wrapper
-        // Integer -> wrapper for int
-        int y = Integer.parseInt(x) + 2; // 1 + 2
+        result = Math.round(1.1F);
+        System.out.println(result);
 
-        System.out.println(y);
+        // 1.1 => 2; zaokrąglenie w górę (sufit)
+        result = (int) Math.ceil(1.1F); // ang. ceiling  -> pol. sufit
+        System.out.println(result);
+
+        // 1.1 => 1; zaokrąglenie w dół (podłoga)
+        result = (int) Math.floor(1.1F); // ang. floor  -> pol. podłoga
+        System.out.println(result);
+
+        result = Math.max(1, 2); // which one is greater?
+        System.out.println(result);
+
+        result = Math.min(1, 2); // which one is smaller?
+        System.out.println(result);
     }
 }
