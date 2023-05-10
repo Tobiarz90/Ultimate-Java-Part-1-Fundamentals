@@ -63,6 +63,7 @@ public class Main {
         return value;
     }
 
+    // these lines are highly related, they serve a single purpose
     private static void printMortgage(int principal, float annualInterestRate, byte years) {
         double mortgage = calculateMortgage(principal, annualInterestRate, years);
 
