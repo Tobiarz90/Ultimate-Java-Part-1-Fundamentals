@@ -23,38 +23,30 @@ public class Main {
     5. invalid value => print error message
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int principal;
-        while (true) {
-            System.out.print("Principal [$1K - $1M]: ");
-            principal = scanner.nextInt();
-            if (principal >= 1_000 && principal < 1_000_000)
-                break;
-            System.out.println("Enter number between 1,000 and 1,000,000");
-        }
-
-        float annualInterestRate;
-        while (true) {
-            System.out.print("Annual Interest Rate [%]: ");
-            // do not use magic names for your variables, always use meaningful and descriptive names
-            annualInterestRate = scanner.nextFloat();
-            if (annualInterestRate > 0 && annualInterestRate <= 30) break;
-            System.out.println("Enter number between 1 and 30");
-        }
-
-        byte years;
-        while (true) {
-            System.out.print("Period (Years): ");
-            years = scanner.nextByte();
-            if (years > 0 && years <= 30) break;
-            System.out.println("Enter number between 1 and 30");
-        }
+        int principal = (int) readNumber("Principal ($1K - $1M): ", 1_000, 1_000_000);
+        float annualInterestRate = (float) readNumber("Annual Interest Rate: ", 1, 30);
+        byte years = (byte) readNumber("Period (Years): ", 1, 30);
 
         double mortgage = calculateMortgage(principal, annualInterestRate, years);
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.print("Mortgage: " + mortgageFormatted);
+    }
+
+    // every question = different type of value => use double as a return type
+    public static double readNumber(String prompt, double min, double max) {
+        Scanner scanner = new Scanner(System.in);
+
+        double value; // generic value
+        while (true) {
+            System.out.print(prompt);
+            value = scanner.nextFloat();
+            if (value >= min && value <= max)
+                break;
+            System.out.println("Enter a value between " + min + " and " + max + ": "); // generic error message
+        }
+
+        return value;
     }
 
     // logic for calculating mortgage in one place
